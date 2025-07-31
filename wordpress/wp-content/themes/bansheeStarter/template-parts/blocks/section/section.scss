@@ -1,0 +1,39 @@
+@use '../../../assets/src/sass/abstracts' as *;
+
+/******************************
+    BLOCK: section
+******************************/
+.block--section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    @include create-mq($md-width) {
+        gap: 4.5rem;
+    }
+    
+    & > *{
+        width:100%;
+    }
+
+    &.block--subwayTile{
+        margin: 100px 0;
+       &:before {
+        content: '';
+        background-image: url("/wp-content/themes/bansheeStarter/assets/dist/imgs/checkered.svg");
+        width: 100%;
+        background-color: swatch('Black');
+        height: 100px;
+        display: inline-block;
+        position: absolute;
+        background-size: 50px;
+        top: -50px;
+    }
+
+    }
+    
+    .wp-block-columns:not(.glossary-entry){
+        margin:0;
+        padding:0;
+    }
+} // close: .block--section
